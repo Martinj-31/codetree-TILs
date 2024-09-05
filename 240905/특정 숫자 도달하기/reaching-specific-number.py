@@ -8,4 +8,5 @@ for i in range(len(integers)):
     else:
         total += integers[i]
         cnt += 1
-print(total, total/cnt)
+
+print(total, round(total/cnt))
