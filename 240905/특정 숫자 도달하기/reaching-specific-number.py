@@ -9,4 +9,4 @@ for i in range(len(integers)):
         total += integers[i]
         cnt += 1
 
-print(total, round(total/cnt))
+print(total, round(total/cnt, 1))
