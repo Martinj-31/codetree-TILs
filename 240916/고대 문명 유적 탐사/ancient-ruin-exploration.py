@@ -96,13 +96,12 @@ dy = [0, 0, -1, 1]
 treasure_list = []
 for k in range(K):
     # Check rotate
-    max_treasure = 0
     best_treasure = 0
     best_grid = [0, 0]
     best_degree = None
     for degree in [270, 180, 90]:
-        for i in range(3, 0, -1):
-            for j in range(3, 0, -1):
+        for j in range(3, 0, -1):
+            for i in range(3, 0, -1):
                 temp = rotate_grid(grid, i, j, degree)
                 total_treasure, _ = get_point(temp)
                 if best_treasure <= total_treasure:
@@ -116,10 +115,12 @@ for k in range(K):
     # Real trial
     grid = rotate_grid(grid, best_grid[0], best_grid[1], best_degree)
 
+    max_treasure = 0
     while True:
         total_treasure, info_treasure = get_point(grid)
         max_treasure += total_treasure
         add(grid)
+
         if total_treasure == 0:
             break
 
