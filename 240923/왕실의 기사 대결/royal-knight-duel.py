@@ -28,9 +28,10 @@ def order(i, d):
     for m in range(L):
         for n in range(L):
             if knights_flat[m][n] == i:
-                if knights_flat[m + dx[d]][n + dy[d]] > 0 and knights_flat[m + dx[d]][n + dy[d]] != i and knights_check[knights_flat[m + dx[d]][n + dy[d]]] == False:
-                    knights_check[knights_flat[m + dx[d]][n + dy[d]]] = True
-                    knights_list.append(knights_flat[m + dx[d]][n + dy[d]])
+                if 0 <= m + dx[d] < L and 0 <= n + dy[d] < L:
+                    if knights_flat[m + dx[d]][n + dy[d]] > 0 and knights_flat[m + dx[d]][n + dy[d]] != i and knights_check[knights_flat[m + dx[d]][n + dy[d]]] == False:
+                        knights_check[knights_flat[m + dx[d]][n + dy[d]]] = True
+                        knights_list.append(knights_flat[m + dx[d]][n + dy[d]])
     for m in knights_list:
         for j in range(L):
             for k in range(L):
