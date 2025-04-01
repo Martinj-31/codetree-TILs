@@ -13,8 +13,14 @@ block10 = [[1, 0], [1, 1], [1, 0]]
 block11 = [[0, 1, 0], [1, 1, 1]]
 block12 = [[0, 1], [1, 1], [0, 1]]
 block13 = [[1, 1, 1], [0, 1, 0]]
+block14 = [[0, 1], [0, 1], [1, 1]]
+block15 = [[1, 1, 1], [0, 0, 1]]
+block16 = [[1, 1], [1, 0], [1, 0]]
+block17 = [[1, 0, 0], [1, 1, 1]]
+block18 = [[0, 1], [1, 1], [1, 0]]
+block19 = [[1, 1, 0], [0, 1, 1]]
 
-blocks = [block1, block2, block3, block4, block5, block6, block7, block8, block9, block10, block11, block12, block13]
+blocks = [block1, block2, block3, block4, block5, block6, block7, block8, block9, block10, block11, block12, block13, block14, block15, block16, block17, block18, block19]
 
 n, m = map(int, sys.stdin.readline().split())
 board = [list(map(int, sys.stdin.readline().split())) for _ in range(n)]
