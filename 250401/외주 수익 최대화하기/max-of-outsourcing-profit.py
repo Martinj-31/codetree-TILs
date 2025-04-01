@@ -23,9 +23,3 @@ for i in range(len(work)):
     if i + work[i][0] <= n:
         dfs(i + work[i][0], work[i][1])
 print(result)
-
-
-# 3
-# 1 20
-# 4 30
-# 1 30
