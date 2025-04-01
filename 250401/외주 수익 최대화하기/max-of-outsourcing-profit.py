@@ -7,14 +7,17 @@ worked = [0 for _ in range(len(work))]
 
 def dfs(t, p):
     global result
-    if t > n:
+    if t >= n:
         result = max(result, p)
         return
 
-    dfs(t + work[t - 1][0], p + work[t - 1][1])
+    if t + work[t][0] > n:
+        dfs(t + work[t][0], p)
+    else:
+        dfs(t + work[t][0], p + work[t][1])
 
 
 result = 0
-for i in range(1, len(work) + 1):
-    dfs(i + work[i - 1][0], work[i - 1][1])
+for i in range(len(work)):
+    dfs(i + work[i][0], work[i][1])
 print(result)
