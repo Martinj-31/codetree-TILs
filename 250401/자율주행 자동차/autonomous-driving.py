@@ -22,6 +22,7 @@ while True:
     else:
         d = dir[d - 3]
         nx, ny = x + dx[d], y + dy[d]
+        d = dir[d - 2]
         if road[nx][ny] == 1:
             break
 
