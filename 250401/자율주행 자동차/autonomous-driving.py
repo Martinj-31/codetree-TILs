@@ -9,7 +9,8 @@ dy = [0, 1, 0, -1]
 dir = [0, 1, 2, 3]
 
 
-cnt = 0
+cnt = 1
+road[x][y] = 2
 while True:
     for _ in range(4):
         d = dir[d - 1]
@@ -20,10 +21,11 @@ while True:
             x, y = nx, ny
             break
     else:
-        d = dir[d - 3]
-        nx, ny = x + dx[d], y + dy[d]
         d = dir[d - 2]
+        nx, ny = x + dx[d], y + dy[d]
         if road[nx][ny] == 1:
             break
+        d = dir[d - 2]
+        x, y = nx, ny
 
 print(cnt)
