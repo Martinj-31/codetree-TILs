@@ -11,11 +11,11 @@ def dfs(t, p):
         result = max(result, p)
         return
 
-    if t + work[t][0] > n:
-        dfs(t + work[t][0], p)
-        dfs(t + 1, p)
-    else:
-        dfs(t + work[t][0], p + work[t][1])
+    for i in range(t, len(work)):
+        if i + work[i][0] > n:
+            dfs(i + work[i][0], p)
+        else:
+            dfs(i + work[i][0], p + work[i][1])
 
 
 result = 0
