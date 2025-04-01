@@ -19,5 +19,6 @@ def dfs(t, p):
 
 result = 0
 for i in range(len(work)):
-    dfs(i + work[i][0], work[i][1])
+    if i + work[i][0] <= n:
+        dfs(i + work[i][0], work[i][1])
 print(result)
