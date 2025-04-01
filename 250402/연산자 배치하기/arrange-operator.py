@@ -23,4 +23,4 @@ def dfs(depth, total, plus, minus, multiply):
 maximum = -1e9
 minimum = 1e9
 dfs(1, numbers[0], operator[0], operator[1], operator[2])
-print(minimum, maximum)
+print(int(minimum), int(maximum))
