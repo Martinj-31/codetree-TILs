@@ -52,11 +52,11 @@ for n, d in order:
         turn = [0, 0, 0, 1]
         direction = [-d, d, -d, d]
         if tables[2][2] != tables[3][6]:
-            turn[3] = 1
+            turn[2] = 1
             if tables[1][2] != tables[2][6]:
-                turn[2] = 1
+                turn[1] = 1
                 if tables[0][2] != tables[1][6]:
-                    turn[1] = 1
+                    turn[0] = 1
 
     for i in range(4):
         if turn[i] == 1:
