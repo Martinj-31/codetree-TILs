@@ -20,10 +20,6 @@ order = [list(map(int, sys.stdin.readline().split())) for _ in range(k)]
 
 for n, d in order:
     global direction, turn
-    if d == 1:
-        tables[n - 1].appendleft(tables[n - 1].pop())
-    elif d == -1:
-        tables[n - 1].append(tables[n - 1].popleft())
 
     if n == 1:
         turn = [1, 0, 0, 0]
@@ -63,8 +59,6 @@ for n, d in order:
                     turn[1] = 1
 
     for i in range(4):
-        if i == n:
-            continue
         if turn[i] == 1:
             if direction[i] == 1:
                 tables[i].appendleft(tables[i].pop())
