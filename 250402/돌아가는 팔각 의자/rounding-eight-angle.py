@@ -21,9 +21,10 @@ order = [list(map(int, sys.stdin.readline().split())) for _ in range(k)]
 for n, d in order:
     global direction, turn
     if d == 1:
-        tables[n].appendleft(tables[n].pop())
+        tables[n - 1].appendleft(tables[n - 1].pop())
     elif d == -1:
-        tables[n].appendleft(tables[n].pop())
+        tables[n - 1].append(tables[n - 1].popleft())
+
     if n == 1:
         turn = [1, 0, 0, 0]
         direction = [d, -d, d, -d]
@@ -70,4 +71,4 @@ for n, d in order:
             elif direction[i] == -1:
                 tables[i].append(tables[i].popleft())
 
-print(tables[0][0] + 2*tables[1][0] + 4*tables[2][0] + 8*tables[3][0])
+print(tables[0][0] + 2 * tables[1][0] + 4 * tables[2][0] + 8 * tables[3][0])
