@@ -25,10 +25,10 @@ for n, d in order:
         direction = [d, -d, d, -d]
         if tables[0][2] != tables[1][6]:
             turn[1] = 1
-        if tables[1][2] != tables[2][6]:
-            turn[2] = 1
-        if tables[2][2] != tables[3][6]:
-            turn[3] = 1
+            if tables[1][2] != tables[2][6]:
+                turn[2] = 1
+                if tables[2][2] != tables[3][6]:
+                    turn[3] = 1
     elif n == 2:
         turn = [0, 1, 0, 0]
         direction = [-d, d, -d, d]
@@ -36,26 +36,26 @@ for n, d in order:
             turn[0] = 1
         if tables[1][2] != tables[2][6]:
             turn[2] = 1
-        if tables[2][2] != tables[3][6]:
-            turn[3] = 1
+            if tables[2][2] != tables[3][6]:
+                turn[3] = 1
     elif n == 3:
         turn = [0, 0, 1, 0]
         direction = [d, -d, d, -d]
-        if tables[0][2] != tables[1][6]:
-            turn[0] = 1
         if tables[1][2] != tables[2][6]:
             turn[1] = 1
+            if tables[0][2] != tables[1][6]:
+                turn[0] = 1
         if tables[2][2] != tables[3][6]:
             turn[3] = 1
     elif n == 4:
         turn = [0, 0, 0, 1]
         direction = [-d, d, -d, d]
-        if tables[0][2] != tables[1][6]:
-            turn[1] = 1
-        if tables[1][2] != tables[2][6]:
-            turn[2] = 1
         if tables[2][2] != tables[3][6]:
             turn[3] = 1
+            if tables[1][2] != tables[2][6]:
+                turn[2] = 1
+                if tables[0][2] != tables[1][6]:
+                    turn[1] = 1
 
     for i in range(4):
         if turn[i] == 1:
