@@ -44,7 +44,7 @@ def dfs(L, arr, idx):
             result = -1
         return
 
-    for i in range(idx, len(loss_list)):
+    for i in range(idx, len(loss_list) + 1):
         arr.append(loss_list[i])
         dfs(L, arr, i + 1)
         if result > 0:
