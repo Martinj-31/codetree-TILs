@@ -58,6 +58,9 @@ for c in range(1, len(loss_list)):
     if c > 3:
         print(result)
         break
+    elif m == 0:
+        print(0)
+        break
     else:
         dfs(c, [], 0)
         if result > 0:
