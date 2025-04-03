@@ -44,11 +44,11 @@ def dfs(L, arr, idx):
             result = -1
         return
 
-    for i in range(idx, len(loss_list) + 1):
+    for i in range(idx, len(loss_list)):
         arr.append(loss_list[i])
         dfs(L, arr, i + 1)
         if result > 0:
-            break
+            return
         arr.pop()
 
 
