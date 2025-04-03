@@ -53,10 +53,10 @@ def dfs(L, arr, idx):
 
 
 loss_list = cand_loss()
-result = 0
+result = -1
 for c in range(1, len(loss_list)):
     if c > 3:
-        print(-1)
+        print(result)
         break
     else:
         dfs(c, [], 0)
