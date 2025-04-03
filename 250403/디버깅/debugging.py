@@ -36,8 +36,9 @@ def dfs(L, arr, idx):
     global loss_list, result
     if L == len(arr):
         op_arr = []
-        for i in range(len(arr)):
-            op_arr.append([arr[i][0], arr[i][1] + 1])
+        if len(arr) != 0:
+            for i in range(len(arr)):
+                op_arr.append([arr[i][0], arr[i][1] + 1])
         if check(arr, op_arr):
             result = len(arr)
         else:
@@ -47,7 +48,7 @@ def dfs(L, arr, idx):
     for i in range(idx, len(loss_list)):
         arr.append(loss_list[i])
         dfs(L, arr, i + 1)
-        if result > 0:
+        if result >= 0:
             return
         arr.pop()
 
@@ -58,12 +59,12 @@ for c in range(1, len(loss_list)):
     if c > 3:
         print(result)
         break
-    elif m == 0:
+    elif check([], []):
         print(0)
         break
     else:
         dfs(c, [], 0)
-        if result > 0:
+        if result >= 0:
             print(result)
             break
 
