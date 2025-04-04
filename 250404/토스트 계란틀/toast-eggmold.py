@@ -11,7 +11,7 @@ dy = [0, 1, 0, -1]
 def bfs():
     global eggs
     visited = [[0 for _ in range(n)] for _ in range(n)]
-    new_eggs = [[-1 for _ in range(n)] for _ in range(n)]
+    # new_eggs = [[-1 for _ in range(n)] for _ in range(n)]
     shaking = False
     for x in range(n):
         for y in range(n):
@@ -39,8 +39,9 @@ def bfs():
             for i in range(n):
                 for j in range(n):
                     if [i, j] in egg_list:
-                        new_eggs[i][j] = afterShaking
-    eggs = new_eggs
+                        # new_eggs[i][j] = afterShaking
+                        eggs[i][j] = afterShaking
+    # eggs = new_eggs
     return shaking
 
 
