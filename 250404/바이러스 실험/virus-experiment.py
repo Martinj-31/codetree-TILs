@@ -56,4 +56,5 @@ for t in range(k):
     eat()
     virus_to_nut()
     growth()
+    feed_nut()
 print(check())
