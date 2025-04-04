@@ -10,8 +10,7 @@ for i in range(n):
             man.append([i, j])
         elif board[i][j] == 2:
             hos.append([i, j])
-print(man)
-print(hos)
+
 
 def dfs(cnt, arr, idx):
     global result
