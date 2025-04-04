@@ -47,7 +47,7 @@ def feed_nut():
 def check():
     cnt = 0
     for v in range(len(virus)):
-        if virus[v][2] > 0:
+        if virus[v][2] >= 0:
             cnt += 1
     return cnt
 
