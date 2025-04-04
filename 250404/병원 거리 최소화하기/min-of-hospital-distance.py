@@ -10,17 +10,19 @@ for i in range(n):
             man.append([i, j])
         elif board[i][j] == 2:
             hos.append([i, j])
-
+print(man)
+print(hos)
 
 def dfs(cnt, arr, idx):
     global result
     if len(arr) == cnt:
-        dist_list = []
-        for a in range(len(arr)):
-            for mm in range(len(man)):
-                dist_list.append(dist(man[mm], arr[a]))
-        dist_list.sort()
-        result = min(result, sum(dist_list[:len(man)]))
+        sum_dist = 0
+        for mm in range(len(man)):
+            min_dist = 1e9
+            for a in range(len(arr)):
+                min_dist = min(min_dist, dist(man[mm], arr[a]))
+            sum_dist += min_dist
+        result = min(result, sum_dist)
         return
 
     for h in range(idx, len(hos)):
