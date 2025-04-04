@@ -17,8 +17,8 @@ def dfs(cnt, arr, idx):
     if len(arr) == cnt:
         dist_list = []
         for a in range(len(arr)):
-            for m in range(len(man)):
-                dist_list.append(dist(man[m], arr[a]))
+            for mm in range(len(man)):
+                dist_list.append(dist(man[mm], arr[a]))
         dist_list.sort()
         result = min(result, sum(dist_list[:len(man)]))
         return
