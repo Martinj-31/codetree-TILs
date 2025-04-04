@@ -1,5 +1,4 @@
 import sys
-from collections import deque
 
 n, m, k = map(int, sys.stdin.readline().split())
 nut = [[5 for _ in range(n)] for _ in range(n)]
@@ -47,12 +46,13 @@ def feed_nut():
 def check():
     cnt = 0
     for v in range(len(virus)):
-        if virus[v][2] >= 0:
+        if virus[v][2] > 0:
             cnt += 1
     return cnt
 
 
 for t in range(k):
+    virus.sort(key=lambda x: x[2])
     eat()
     virus_to_nut()
     growth()
