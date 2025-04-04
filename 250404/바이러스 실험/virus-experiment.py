@@ -21,10 +21,13 @@ def eat():
 
 
 def virus_to_nut():
+    remove_list = []
     for v in range(len(virus)):
         if virus[v][0] > 10 and virus[v][1] > 10:
             nut[virus[v][0] - 11][virus[v][1] - 11] += virus[v][2] // 2
-            virus[v] = [-1, -1, -1]
+            remove_list.append(virus[v])
+    for r in remove_list:
+        virus.remove(r)
 
 
 def growth():
@@ -57,4 +60,4 @@ for t in range(k):
     virus_to_nut()
     growth()
     feed_nut()
-print(check())
+print(len(virus))
